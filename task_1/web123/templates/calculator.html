@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Create</title>
+</head>
+<body>
+
+<h1>AI included supper hi tec new calculator</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label>First number:</label><br/>
+    <input type="text" name="first_number"/><br/>
+    <p class="error">{{ first_number }}</p>
+
+    <label>Second number:</label><br/>
+    <input type="text" name="second_number"/><br/>
+    <p class="error">{{ second_number }}</p>
+
+    <label>Operation:</label><br/>
+    <input type="radio" name="operation" value="+"/>+<br/>
+    <input type="radio" name="operation" value="-"/>-<br/>
+    <input type="radio" name="operation" value="*"/>*<br/>
+    <input type="radio" name="operation" value="/"/>/
+    <p class="error">{{ total }}</p>
+
+    <br/>
+    <input type="submit" value="Calculate"/>
+</form>
+
+</body>
+</html>
